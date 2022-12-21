@@ -1,6 +1,27 @@
 # Htaccess file
 Htaccess stands for Hypertext Access. It is a configuration file. This file is very handy when a user doesn't have access to the server configuration file. Users are allowed to change the name from .htaccess to something else.
 
+## Change or view access file name
+file configurations are located here `/etc/apache2/apache2.conf`. 
+```
+//...
+# AccessFileName: The name of the file to look for in each directory
+# for additional configuration directives.  See also the AllowOverride
+# directive.
+#
+AccessFileName .htaccess
+
+#
+# The following lines prevent .htaccess and .htpasswd files from being
+# viewed by Web clients.
+#
+<FilesMatch "^\.ht">
+        Require all denied
+</FilesMatch>
+//...
+```
+
+
 ## How to use
 You can use one `.htaccess` file inside a folder and fortunately, there is no limit. Using multiple `.htaccess` files in a project is so handy.
 - Create a .htaccess file
