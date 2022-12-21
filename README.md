@@ -3,11 +3,12 @@
 
 #### Pages
 - [.htaccess](./HTACCESS.md)
+- [setup php](./SETUP-PHP.md)
 
 # Apache web server
 The [Apache HTTP Server](https://www.apache.org/) is a free and open-source cross-platform web server software, released under the terms of Apache License 2.0. Apache is developed and maintained by an open community of developers under the auspices of the Apache Software Foundation - `Wikipedia`
 
-## Install
+## Install 
 #### Debian
 
 open terminal and enter this command
@@ -16,7 +17,7 @@ sudo apt install apache2
 ```
 
 ## Start, Stop and Restart
-I'm using service command. To install service use `apt-get install sysvinit-utils`
+I'm using service command. To install service use `sudo apt install sysvinit-utils`
 <br />
 
 **Start**
@@ -90,5 +91,6 @@ Here I'm adding a path for port `8080` to store file like phpmyadmin, etc. <br /
 
 </VirtualHost>
 ```
+<br />
 
 **Please feel free to add something or translate it into your native language.** The contribution guidelines can be found [here](./CONTRIBUTING.md).
