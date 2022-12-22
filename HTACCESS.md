@@ -27,7 +27,7 @@ It is possible that rewrite rule is not enabled by default.  <br />
 ```
 sudo a2enmod rewrite
 ```
-**2.** Enable overwrite in `/etc/apache2/sites-enabled/000-default.conf`. Find `<Directory /var/www/> //...Some content</Directory>` and set `AllowOverride All`
+**2.** Enable overwrite in `/etc/apache2/apache2.conf`. Find `<Directory /var/www/> //...Some content</Directory>` and set `AllowOverride All`
 ```
 //...
 <Directory /var/www/>
