@@ -1,4 +1,4 @@
-# Htaccess file
+# Htaccess
 Htaccess stands for Hypertext Access. It is a configuration file. This file is very handy when a user doesn't have access to the server configuration file. Users are allowed to change the name from .htaccess to something else.
 
 ## Change or view access file name
@@ -20,6 +20,24 @@ AccessFileName .htaccess
 </FilesMatch>
 //...
 ```
+
+## How to enable
+It is possible that rewrite rule is not enabled by default.  <br />
+**1.** Enable Apache mod_rewrite module
+```
+sudo a2enmod rewrite
+```
+**2.** Enable overwrite in `/etc/apache2/sites-enabled/000-default.conf`. Find `<Directory /var/www/> //...Some content</Directory>` and set `AllowOverride All`
+```
+//...
+<Directory /var/www/>
+//...
+AllowOverride All
+//...
+</Directory>
+//...
+```
+**Now restart**
 
 
 ## How to use
@@ -67,5 +85,5 @@ RewriteEngine On
 # Redirect all request to index.php file
 RewriteRule ^(.+)$ index.php
 ```
-
-**_Note:_** When we use a `.htaccess` file in the project root folder to redirect all requests to a specific file (e.g. `api.php`), and there is no condition. Unfortunately at some point we figure out that, we have a folder called `public` and users need to access it for files eg: `image.img`, we can do that by just creating a empty `.htaccess` file with `RewriteEngine On`. _This file will overwrite all of the previous conditions_. **Horray**, now users can access the `public` folder `https://www.example.com/public`.  
+## Tips
+- When we use a `.htaccess` file in the project root folder to redirect all requests to a specific file (e.g. `api.php`), and there is no condition. Unfortunately at some point we figure out that, we have a folder called `public` and users need to access it for files eg: `image.img`, we can do that by just creating a empty `.htaccess` file with `RewriteEngine On`. _This file will overwrite all of the previous conditions_. **Horray**, now users can access the `public` folder `https://www.example.com/public`.  
