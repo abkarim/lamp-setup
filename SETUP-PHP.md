@@ -12,7 +12,7 @@ tar -xzvf php-{version}.tar.gz
 
 Enter this command to download all prerequisite
 ```
-sudo apt install pkg-config libxml2-dev libsqlite3-dev
+sudo apt install pkg-config libxml2-dev libsqlite3-dev php-mysql
 ```
 
 Open `php-{version}` folder and enter this command to configure php build
