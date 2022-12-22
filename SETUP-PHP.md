@@ -32,4 +32,13 @@ Configure apache to use PHP
 ```
 sudo apt install libapache2-mod-php
 ```
+
+## Error reporting
+To show error you need to set `display_errors = On` in `/etc/php/{version}/apache2/php.ini`. **Don't enable in production**
+```
+//...
+display_errors = On
+//...
+```
+
 **Restart apache**
