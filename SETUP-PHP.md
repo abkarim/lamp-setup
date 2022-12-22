@@ -1,35 +1,35 @@
 # PHP with apache web server
-We need to setup PHP for using with apache web server.
+We have to setup PHP for using with apache web server. We will install php-8.2.0 in our system.
+
+## Download
+[download file](https://www.php.net/downloads.php) -tar.gz. 
 
 ## Install
-we will install php-8.2 in our system
-
-### Debian
-Pre-requisites to installing PHP.
-
+Open download folder and extract package
 ```
-sudo apt install apt-transport-https lsb-release ca-certificates wget -y
+tar -xzvf php-{version}.tar.gz
 ```
 
-Add GPG key and Sury repository 
+Enter this command to download all prerequisite
 ```
-sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg 
-```
-```
-sudo sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+sudo apt install pkg-config libxml2-dev libsqlite3-dev
 ```
 
-Update package repository
+Open `php-{version}` folder and enter this command to configure php build
 ```
-sudo apt update
-```
-
-Install php
-```
-sudo apt install php8.2
+./configure
 ```
 
-Add apache support 
+Compile and install php
 ```
-sudo apt install php8.2 libapache2-mod-php8.2
+make
 ```
+```
+sudo make install
+```
+
+Configure apache to use PHP
+```
+sudo apt install libapache2-mod-php
+```
+**Restart apache**
