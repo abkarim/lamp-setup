@@ -1,10 +1,18 @@
 # PHP with apache web server
-We have to setup PHP for using with apache web server. We will install php-8.2.0 in our system.
+We have to setup PHP for using with apache web server. We will install php8.1 in our system.
 
 ## Download
 [download file](https://www.php.net/downloads.php) -tar.gz. 
 
 ## Install
+### Option 1
+Open terminal and enter this command
+####
+```
+sudo apt install php8.1
+```
+
+### Option 2
 Open download folder and extract package
 ```
 tar -xzvf php-{version}.tar.gz
@@ -28,7 +36,8 @@ make
 sudo make install
 ```
 
-Configure apache to use PHP
+## Configure apache to use PHP
+This option will use the latest stable PHP version
 ```
 sudo apt install libapache2-mod-php
 ```
